@@ -46,7 +46,6 @@ public class mainUI extends JFrame implements ActionListener{
 	JTextField JTb5=new JTextField();//文件路径
 	JTextArea  JTa6=new JTextArea();//解密m
 	JTextField JTb7=new JTextField();//MD5
-	ArrayList<message> mesli;
 	JFileChooser chooser = new JFileChooser();//文件选择
 	message mes;
 	String md5;
@@ -223,7 +222,7 @@ public class mainUI extends JFrame implements ActionListener{
 			BigInteger mm=ch.checker(mes);
 			try {
 				JTa6.setText(java.net.URLDecoder.decode(new String(mm.toByteArray()),   "utf-8"));
-				if(JTa6.getText().equals(JTa1.getText())){
+				if(JTa6.getText().equals(JTa1.getText())|JTa6.getText().equals(JTb7.getText())){
 					JL7.setText("m: 验证安全");
 				}else{
 					JL7.setText("m: 验证失败，发生改动");
