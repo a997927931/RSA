@@ -204,6 +204,7 @@ public class mainUI extends JFrame implements ActionListener{
 		if(e.getSource()==JB3){
 			Sig sig=new Sig();
 			String m;
+			if(JTb7.getText().equals(""))return;
 			try {
 				m = java.net.URLEncoder.encode(JTb7.getText(),"utf-8");
 				mes=sig.Siger(new BigInteger(m.getBytes()));
