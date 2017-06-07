@@ -40,9 +40,10 @@ public class Sig {
 	private static BigInteger Gete(BigInteger fn){
 			//生成小于fn的随机数
 			Random r=new Random();
-			int a=r.nextInt(999);
+			int a=r.nextInt(9998);
+			a=a+1;
 			BigInteger Biga=new BigInteger(String.valueOf(a));
-			BigInteger th=new BigInteger("1000");
+			BigInteger th=new BigInteger("10000");
 			BigInteger e=fn.multiply(Biga).divide(th);
 			//取随机数后第一个与fn互素的数
 			BigInteger i;
